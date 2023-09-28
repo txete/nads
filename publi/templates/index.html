@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Películas - NADS</title>
+    <link rel="stylesheet" href="/static/style/main.css" />
+    <script src="/static/fontawesome/js/all.js" data-auto-a11y="true"></script>
+    <style>
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="header-container">
+            <a href="/" class="logo">
+                <img src="/static/img/nadslogo.webp" />
+            </a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="/">Inicio</a></li>
+                    <li><a href="/stats">Estadísticas</a></li>
+                    <li><a href="/ads">Anuncios</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main class="container">
+        <form method="POST">
+            {% csrf_token %}
+            <!-- Aquí debes especificar la URL donde enviarás los datos del formulario -->
+            <div class="title">Peliculas en NADS {{ saludo }}</div>
+            <select name="genres" id="genresSelect" multiple>
+                {% for genre in genres %}
+                <option value="{{ genre.genre_id }}">{{ genre.genre }}</option>
+                {% endfor %}
+            </select>
+
+            <label for="satisfactionRange">Rango de satisfacción:</label>
+            <input type="range" id="satisfactionRange" name="satisfaction" value="50" min="0" max="100"/>
+            <!-- oninput="this.nextElementSibling.value = this.value" -->
+            <!-- <output>50</output> -->
+
+            <label for="budget">Presupuesto:</label>
+            <input type="text" id="budget" name="budget">
+
+            <label for="description">Descripción:</label>
+            <textarea id="description" name="description" rows="4" cols="50"></textarea>
+
+            <button type="submit">Enviar</button>
+        </form>
+    </main>
+    <footer class="site-footer">
+        <!-- ... contenido del footer ... -->
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,65 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estadísticas de Películas</title>
+    <!-- Enlaza la biblioteca Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="/static/style/main.css" />
+    <style>
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="header-container">
+            <a href="/" class="logo">
+                <img src="/static/img/nadslogo.webp" />
+            </a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="/">Inicio</a></li>
+                    <li><a href="/stats">Estadísticas</a></li>
+                    <li><a href="/ads">Anuncios</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="container">
+        <h1>Anuncios</h1>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Descripción</th>
+                    <th>Géneros</th>
+                    <th>Presupuesto Inicial (€)</th>
+                    <th>Presupuesto Restante (€)</th>
+                    <th>Visualizaciones Totales</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for ad in ads %}
+                <tr>
+                    <td>{{ ad.ad_description }}</td>
+                    <td>
+                        {% for genre in ad.genre.all %}
+                            {{ genre.genre }},
+                        {% endfor %}
+                    </td>                    
+                    <td>{{ ad.ad_budget|floatformat:2 }}</td>
+                    <td>{{ ad.remaining_budget|floatformat:2 }}</td>
+                    <td>{{ ad.total_views|floatformat:0 }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>

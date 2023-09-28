@@ -1,0 +1,167 @@
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: #141414;
+    color: #E5E5E5;
+    margin: 0;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #181818;
+    padding: 30px;
+    border-radius: 8px;
+}
+
+.title {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #E50914; /* Rojo característico de Netflix */
+}
+
+select,
+input,
+textarea,
+output,
+button {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    background-color: #333;
+    border: 1px solid #444;
+    border-radius: 4px;
+    color: #E5E5E5;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+select:focus,
+input:focus,
+textarea:focus {
+    outline: none;
+    border-color: #E50914;
+    box-shadow: 0 0 8px rgba(229, 9, 20, 0.6);
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+button {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    background-color: #E50914;
+    border: none;
+    border-radius: 4px;
+    color: #FFF;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #C20712;
+}
+
+button:active {
+    background-color: #A5060E;
+}
+
+output {
+    display: inline-block;
+    /* margin-left: 10px; */
+}
+
+/* Estilos adicionales para la página de estadísticas */
+h1, h2 {
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #E50914 !important; /* Rojo característico de Netflix */
+}
+
+canvas {
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+/* Tal vez quieras añadir algún estilo específico para gráficos */
+.chart-container {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.site-header, .site-footer {
+    background-color: #181818;
+    padding: 20px 0;
+    color: #E5E5E5;
+}
+
+.header-container, .footer-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo span {
+    font-size: 24px;
+    font-weight: bold;
+    color: #E50914; /* Rojo característico de Netflix */
+}
+
+.main-nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 20px;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: #E5E5E5;
+    transition: color 0.3s ease;
+}
+
+.main-nav a:hover {
+    color: #E50914;
+}
+
+.logo img {
+    max-height: 40px;  /* Esto controla la altura máxima del logo. Puedes ajustarlo según tus necesidades. */
+    width: auto;      /* Ajusta el ancho proporcionalmente según la altura. */
+    display: block;   /* Elimina el espacio extra alrededor de la imagen inline. */
+}
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* Asegurarse de que el header esté por encima de otros elementos */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Opcional: sombra sutil para darle profundidad */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table, th, td {
+    border: 1px solid #444;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #333;
+    color: #E5E5E5;
+}
