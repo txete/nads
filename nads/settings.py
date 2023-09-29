@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-de6a5yi9our^98d#e)ae#*%()4)=1_1bc87axak&h)+s^=h^i^
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -87,7 +87,7 @@ DATABASES = {
         'NAME': 'netflix',
         'USER': 'postgres',
         'PASSWORD': 'a',
-        'HOST': '192.168.23.50',  # Usa 'localhost' si tu base de datos está en la misma máquina, de lo contrario, coloca la dirección IP o el nombre del host
+        'HOST': 'localhost',
         'PORT': '5432',      # El puerto por defecto de PostgreSQL es 5432
         'OPTIONS': {
             'options': '-c search_path=netflix'
@@ -95,7 +95,10 @@ DATABASES = {
     }
 }
 
-
+# Cuando lo corremos localmente
+# 'HOST': '192.168.23.50',
+# Cuando lo corremos en colab
+# 'HOST': 'localhost',
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
