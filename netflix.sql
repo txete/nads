@@ -82,12 +82,12 @@ CREATE PROCEDURE netflix.insert_ad(IN _ad_description character varying, IN _ad_
 BEGIN
 INSERT INTO netflix.ad(ad_description, ad_budget, ad_is_active, aprox_rating)
 	VALUES (_ad_description, _ad_budget, _ad_is_active, _aprox_rating)
-	RETURNING id_ad INTO inserted_id ;
+	RETURNING ad_id INTO inserted_id ;
 
 
 FOREACH _id IN ARRAY _genre_ids
 LOOP
-	INSERT INTO netflix.ad_genre(id_ad, id_genre)
+	INSERT INTO netflix.ad_genre(ad_id, id_genre)
 		VALUES (inserted_id, _id);
 END LOOP;
 END;$$;
@@ -143,11 +143,11 @@ ALTER TABLE netflix.ad_genre OWNER TO postgres;
 
 --
 -- TOC entry 212 (class 1259 OID 41437)
--- Name: ads_id_ad_seq; Type: SEQUENCE; Schema: netflix; Owner: postgres
+-- Name: ads_ad_id_seq; Type: SEQUENCE; Schema: netflix; Owner: postgres
 --
 
 ALTER TABLE netflix.ad ALTER COLUMN ad_id ADD GENERATED ALWAYS AS IDENTITY (
-    SEQUENCE NAME netflix.ads_id_ad_seq
+    SEQUENCE NAME netflix.ads_ad_id_seq
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
@@ -479,10 +479,10 @@ COPY netflix.viewer (viewer_id, username, password) FROM stdin;
 --
 -- TOC entry 3405 (class 0 OID 0)
 -- Dependencies: 212
--- Name: ads_id_ad_seq; Type: SEQUENCE SET; Schema: netflix; Owner: postgres
+-- Name: ads_ad_id_seq; Type: SEQUENCE SET; Schema: netflix; Owner: postgres
 --
 
--- SELECT pg_catalog.setval('netflix.ads_id_ad_seq', 5, true);
+-- SELECT pg_catalog.setval('netflix.ads_ad_id_seq', 5, true);
 
 
 --
