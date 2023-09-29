@@ -1,3 +1,6 @@
+-- En colab no funcionan muchas cosas del squema que si podemos ejecutar por pgadmin
+-- Voy a comentarlas para que no se rompa aunque la maquina quede mas pobre
+
 --
 -- PostgreSQL database dump
 --
@@ -7,26 +10,26 @@
 
 -- Started on 2023-09-28 17:56:39
 
-SET statement_timeout = 0;
-SET lock_timeout = 0;
-SET idle_in_transaction_session_timeout = 0;
-SET client_encoding = 'UTF8';
-SET standard_conforming_strings = on;
-SELECT pg_catalog.set_config('search_path', '', false);
-SET check_function_bodies = false;
-SET xmloption = content;
-SET client_min_messages = warning;
-SET row_security = off;
+-- SET statement_timeout = 0;
+-- SET lock_timeout = 0;
+-- SET idle_in_transaction_session_timeout = 0;
+-- SET client_encoding = 'UTF8';
+-- SET standard_conforming_strings = on;
+-- -- SELECT pg_catalog.set_config('search_path', '', false);
+-- SET check_function_bodies = false;
+-- SET xmloption = content;
+-- SET client_min_messages = warning;
+-- SET row_security = off;
 
 --
 -- TOC entry 5 (class 2615 OID 41423)
 -- Name: netflix; Type: SCHEMA; Schema: -; Owner: postgres
 --
 
-CREATE SCHEMA netflix;
+-- CREATE SCHEMA netflix;
 
 
-ALTER SCHEMA netflix OWNER TO postgres;
+-- ALTER SCHEMA netflix OWNER TO postgres;
 
 --
 -- TOC entry 6 (class 2615 OID 2200)
@@ -36,7 +39,7 @@ ALTER SCHEMA netflix OWNER TO postgres;
 -- *not* creating schema, since initdb creates it
 
 
-ALTER SCHEMA public OWNER TO postgres;
+-- ALTER SCHEMA public OWNER TO postgres;
 
 --
 -- TOC entry 224 (class 1255 OID 41424)
@@ -479,7 +482,7 @@ COPY netflix.viewer (viewer_id, username, password) FROM stdin;
 -- Name: ads_id_ad_seq; Type: SEQUENCE SET; Schema: netflix; Owner: postgres
 --
 
-SELECT pg_catalog.setval('netflix.ads_id_ad_seq', 5, true);
+-- SELECT pg_catalog.setval('netflix.ads_id_ad_seq', 5, true);
 
 
 --
@@ -488,7 +491,7 @@ SELECT pg_catalog.setval('netflix.ads_id_ad_seq', 5, true);
 -- Name: genre_id_genre_seq; Type: SEQUENCE SET; Schema: netflix; Owner: postgres
 --
 
-SELECT pg_catalog.setval('netflix.genre_id_genre_seq', 5, true);
+-- SELECT pg_catalog.setval('netflix.genre_id_genre_seq', 5, true);
 
 
 --
@@ -497,7 +500,7 @@ SELECT pg_catalog.setval('netflix.genre_id_genre_seq', 5, true);
 -- Name: movie_id_movie_seq; Type: SEQUENCE SET; Schema: netflix; Owner: postgres
 --
 
-SELECT pg_catalog.setval('netflix.movie_id_movie_seq', 5, true);
+-- SELECT pg_catalog.setval('netflix.movie_id_movie_seq', 5, true);
 
 
 --
@@ -506,7 +509,7 @@ SELECT pg_catalog.setval('netflix.movie_id_movie_seq', 5, true);
 -- Name: playlist_id_playlist_seq; Type: SEQUENCE SET; Schema: netflix; Owner: postgres
 --
 
-SELECT pg_catalog.setval('netflix.playlist_id_playlist_seq', 5, true);
+-- SELECT pg_catalog.setval('netflix.playlist_id_playlist_seq', 5, true);
 
 
 --
@@ -515,7 +518,7 @@ SELECT pg_catalog.setval('netflix.playlist_id_playlist_seq', 5, true);
 -- Name: user_id_user_seq; Type: SEQUENCE SET; Schema: netflix; Owner: postgres
 --
 
-SELECT pg_catalog.setval('netflix.user_id_user_seq', 5, true);
+-- SELECT pg_catalog.setval('netflix.user_id_user_seq', 5, true);
 
 
 --
@@ -712,8 +715,8 @@ ALTER TABLE ONLY netflix.rating
 -- Name: SCHEMA public; Type: ACL; Schema: -; Owner: postgres
 --
 
-REVOKE USAGE ON SCHEMA public FROM PUBLIC;
-GRANT ALL ON SCHEMA public TO PUBLIC;
+-- REVOKE USAGE ON SCHEMA public FROM PUBLIC;
+-- GRANT ALL ON SCHEMA public TO PUBLIC;
 
 
 -- Completed on 2023-09-28 17:56:39
