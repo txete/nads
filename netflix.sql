@@ -930,23 +930,23 @@ ALTER TABLE public.django_session OWNER TO postgres;
 -- Data for Name: ad_genre; Type: TABLE DATA; Schema: netflix; Owner: postgres
 --
 
-COPY netflix.ad_genre (ad_id, genre_id) FROM stdin;
-1	1
-1	3
-2	2
-3	1
-3	3
-4	1
-4	4
-5	2
-5	5
-7	1
-7	2
-8	5
-9	1
-9	3
-9	4
-\.
+-- COPY netflix.ad_genre (ad_id, genre_id) FROM stdin;
+-- 1	1
+-- 1	3
+-- 2	2
+-- 3	1
+-- 3	3
+-- 4	1
+-- 4	4
+-- 5	2
+-- 5	5
+-- 7	1
+-- 7	2
+-- 8	5
+-- 9	1
+-- 9	3
+-- 9	4
+-- \.
 
 
 --
