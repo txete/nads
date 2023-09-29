@@ -912,16 +912,16 @@ ALTER TABLE public.django_session OWNER TO postgres;
 -- Data for Name: ad; Type: TABLE DATA; Schema: netflix; Owner: postgres
 --
 
-COPY netflix.ad (ad_id, ad_description, ad_budget, ad_is_active, aprox_rating) FROM stdin;
-1	Ad 1	1000	t	4
-2	Ad 2	500	f	3
-3	Ad 3	750	t	5
-4	Ad 4	2000	t	4
-5	Ad 5	1500	f	2
-7	PA	80	t	32
-8	Anuncio Romance	124	t	83
-9	Super anuncio	124	t	25
-\.
+-- COPY netflix.ad (ad_id, ad_description, ad_budget, ad_is_active, aprox_rating) FROM stdin;
+-- 1	Ad 1	1000	t	4
+-- 2	Ad 2	500	f	3
+-- 3	Ad 3	750	t	5
+-- 4	Ad 4	2000	t	4
+-- 5	Ad 5	1500	f	2
+-- 7	PA	80	t	32
+-- 8	Anuncio Romance	124	t	83
+-- 9	Super anuncio	124	t	25
+-- \.
 
 
 --
